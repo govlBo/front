@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test8.html</title>
+  
+  <style>   /* css주석 */
+
+    body {   /*  body는 바디내 기본 적용.   * 은 외부것까지 포함 기본적용 */
+      font-size: 10pt;
+    }
+    p {color: rgb(23, 15, 100); font-size: 10px}
+    h1 {color: rgb(113, 141, 97)}
+    
+    #a1 {   /* #: id ,아이디를 의미함_ 한번만 가능, 중복불가  */
+      font-size: 15pt;
+      color: rgb(185, 149, 185)
+    } 
+
+    .b1 {    /*  . 은 class를 의미/ 배경컬러 전체 다 적용_  중복 가능*/
+      background-color:rgb(168, 140, 194);
+      color:rgb(16, 17, 15);
+    }     
+    div.b1, .c1 {         /*  쉼표(,): 형제 선택자 */
+      font-size: 30pt;
+      color: salmon;
+    }     
+
+    .b2 {    /*  span 은 배경컬러 부분만 적용 _  중복 가능*/
+      background-color:rgb(62, 54, 70);
+      color:rgb(255, 255, 255);
+    }     
+
+
+  </style>
+</head>
+<body>
+  <h2>스타일 혼용 사용예</h2>
+  <p>1.안녕하세요</p>
+  <h1>2.안녕하세요</h1>
+  <p style="font-size:70px">3.안녕하세요</p>
+  <div>4.안녕하세요</div>
+  <div class="c1">5.안녕하세요</div>
+  <p class="b1">6.안녕하세요</p>
+  <div class="c1">7.안녕하세요</div>
+  <div id="a1">8.안녕하세요</div>
+  <span class="b2">9.안녕하세요</span>
+  <div class="b1 c1" >10.안녕하세요</div>
+  <span class ="b2">11.안녕하세요</span>
+</body>
+</html>
