@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+
+ul, .container {   /*container는 test6b.html 파일때문에 추가함*/
+  list-style-type: none;
+  padding: 0px;
+  border: 2px soild sandybrown;
+
+  display: grid;
+  height: 500px;
+
+  /* grid-template-columns: 100px 1fr 1fr;   /*열*/
+  grid-template-rows: 200px 2fr 1fr;  /*행*/
+ /* gap:20px 10px; */
+
+  /* grid-template-columns: repeat(3,1fr);*/
+
+
+  grid-template-columns: repeat(2, minmax(100px,auto));  /* 2개 열의 최소크기를 100px로 지정*/
+  grid-template-rows: repeat(3, minmax(100px,auto));  /* 3개 행의 최소크기를 100px로 지정*/
+  gap: 10px;
+  
+
+}
+
+
+li {
+  display: flex;
+  background-color: rgb(255, 255, 134);
+}
+
+li:nth-child(2n) {
+  background-color: aqua;
+}
+

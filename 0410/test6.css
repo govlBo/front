@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+
+ul, .container {   /*container는 test6b.html 파일때문에 추가함*/
+  display: flex;
+  list-style-type: none;
+  height: 300px;
+  padding: 0px;
+
+  flex-direction: column;
+  /* flex-direction: column-reverse; */
+  /* flex-wrap: wrap-reverse; */
+
+  border: 3px solid red;
+
+  /* justify-content: space-evenly; ((justify 는 가로에서 작업 // align 은 세로에서 작업))*/
+  /* justify-content: center;   */
+  justify-content: flex-start;  
+  align-items: center;
+  align-content: space-between;
+}
+
+li:nth-child(3){
+  align-self:flex-start;
+}
