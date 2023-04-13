@@ -48,6 +48,14 @@
 
     function commaInput2() {
       let num = myform.num.value;
+      num *=1;
+
+      if(num == "" || isNaN(num)) {
+        alert("숫자를 입력하세요");
+        myform.num.select();
+        myform.num.focus();
+        return false;
+      }
 
       demo.innerHTML = numberWithCommas(num);
     }
