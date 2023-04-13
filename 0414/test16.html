@@ -22,40 +22,46 @@
         return false;
       }
 
-
-      //  01234567890  =>  1,234,567
-      while(numsubstring(0,1) == '0') {     // 앞에 0 잘라내기
-        num.substring(1,num.length);        
+      // 001234567890  => 1,234,567
+      while(num.substring(0,1) == '0') {
+        num = num.substring(1,num.length);
       }
 
-      comma(num);
+      demo.innerHTML = comma(num);
     }
 
-    // 1234
+    // 1234567
     function comma(num) {
       let numLen = num.length;
       let numStr = '';
-      let numPoint = numLen % 3 ;
+      let numPoint = numLen % 3;
 
-      numStr = num.substring(0,numPoint);
-      
+      numStr = num.substring(0, numPoint)
+
       while(numPoint < numLen) {
-        if(sumStr != "") numStr += ",";
-      numStr += num.substring(numPoint, numPoint+3);
-      numPoint += 3;
+        if(numStr != "") numStr += ",";     // 1,234,
+        numStr += num.substring(numPoint, numPoint+3);  // 1,234,567
+        numPoint += 3;    // 4
       }
       return numStr;
     }
-    
-    
+
+    function commaInput2() {
+      let num = myform.num.value;
+
+      demo.innerHTML = numberWithCommas(num);
+    }
 
 
-
+    // 쉼표추가하기(정규식 활용)
+    function numberWithCommas(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
   </script>
 </head>
 <body>
-  <p><br/></p>
-  <div class="container">
+<p><br/></p>
+<div class="container">
   <h2>쉼표처리</h2>
   <form name="myform">
     <p>
@@ -63,8 +69,11 @@
     </p>
     <p>
       <input type="button" value="쉼표추가1" onclick="commaInput1()" class="btn btn-success"/>
+      <input type="button" value="쉼표추가2" onclick="commaInput2()" class="btn btn-success"/>
     </p>
   </form>
+  <hr/>
+  <div id="demo"></div>
 </div>
 </body>
 </html>
